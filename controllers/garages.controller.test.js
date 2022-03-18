@@ -73,7 +73,7 @@ describe('Given the Garage controller', () => {
         req.body = { user: 'Pepe', pass: '1234' };
         bcrypt.hashSync.mockReturnValue('encrypted1234');
         Garage.create.mockRejectedValue(new Error('Error adding user'));
-        // createToken.mockReturnValue('mock_token');
+        
       });
       test('Then call next', async () => {
         await controller.insertGarage(req, res, next);
@@ -101,7 +101,7 @@ describe('Given the Garage controller', () => {
       test('Then call next', async () => {
         await controller.getGarage(req, res, next);
         expect(res.json).not.toHaveBeenCalled();
-        // expect(next).toHaveBeenCalled();
+
       });
     });
   });
@@ -109,7 +109,7 @@ describe('Given the Garage controller', () => {
   describe('When  updateGarage is triggered', () => {
     describe('And the document is updated (promise resolved)', () => {
       beforeEach(() => {
-        // req.params.id = '619516dd75bcdf9b77e6690c';
+
         Garage.findByIdAndUpdate.mockReturnValue({
           populate: jest.fn().mockResolvedValue([]),
         });
@@ -130,7 +130,7 @@ describe('Given the Garage controller', () => {
       test('Then call next', async () => {
         await controller.updateGarage(req, res, next);
         expect(res.json).not.toHaveBeenCalled();
-        // expect(next).toHaveBeenCalled();
+
       });
     });
   });
@@ -145,7 +145,7 @@ describe('Given the Garage controller', () => {
       });
       test('Then call json', async () => {
         await controller.deleteGarage(req, res, next);
-        //expect(res.status).toHaveBeenCalledWith(204);
+
         expect(res.json).toHaveBeenCalled();
       });
     });
@@ -158,7 +158,7 @@ describe('Given the Garage controller', () => {
       });
       test('Then call json', async () => {
         await controller.deleteGarage(req, res, next);
-        //expect(res.status).toHaveBeenCalledWith(204);
+
         expect(res.json).toHaveBeenCalled();
       });
     });
@@ -173,7 +173,7 @@ describe('Given the Garage controller', () => {
       test('Then call next', async () => {
         await controller.deleteGarage(req, res, next);
         expect(res.json).not.toHaveBeenCalled();
-        // expect(next).toHaveBeenCalled();
+
       });
     });
   });

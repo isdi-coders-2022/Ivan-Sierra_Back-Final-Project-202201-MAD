@@ -10,7 +10,18 @@ export function garageCreator(modelName = 'Garage') {
     phone: { type: Number, required: true },
     web: { type: String, required: true },
     address: { type: String, required: true },
-    services: [{ type: mongoose.Types.ObjectId, ref: 'Service' }],
+    services: {
+        ruedas : {type: Number, default : 0},
+        aceite : {type: Number, default : 0},
+        aire : {type: Number, default : 0},
+        filtros : {type: Number, default : 0},
+        amortiguadores : {type: Number, default : 0},
+        bombillas : {type: Number, default : 0},
+        discos : {type: Number, default : 0},
+        pastillas : {type: Number, default : 0}
+
+    }
+
   });
 
   garageSchema.set('toJSON', {

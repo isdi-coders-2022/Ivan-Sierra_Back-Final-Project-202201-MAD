@@ -1,9 +1,9 @@
-//import { garageCreator } from '../models/garage.model.js';
+
 import { Garage } from '../models/garage.model.js';
-//import { createToken } from '../services/auth.js';
+
 import bcrypt from 'bcryptjs';
 
-//export const Garage = garageCreator();
+
 
 export const getAllGarages = async (req, res, next) => {
   try {
