@@ -8,7 +8,7 @@ import loginRouter from './routes/login.routes.js';
 dotenv.config();
 mongoConnect();
 export const app = express();
-const port = 6000;
+const port = process.env.PORT;
 
 app.use(express.json());
 app.use(morgan('dev'));

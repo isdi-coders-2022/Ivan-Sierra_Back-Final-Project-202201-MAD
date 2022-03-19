@@ -40,9 +40,8 @@ export const updateGarage = async (req, res, next) => {
   try {
     const resp = await Garage.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
-    }).populate('services', {
-      services: 0,
-    });
+    })
+    
     res.json(resp);
   } catch (err) {
     next(err);

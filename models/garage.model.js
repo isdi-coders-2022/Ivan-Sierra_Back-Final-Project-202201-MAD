@@ -19,7 +19,6 @@ export function garageCreator(modelName = 'Garage') {
         bombillas : {type: Number, default : 0},
         discos : {type: Number, default : 0},
         pastillas : {type: Number, default : 0}
-
     }
 
   });
