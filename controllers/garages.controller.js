@@ -1,9 +1,9 @@
-
+//import { garageCreator } from '../models/garage.model.js';
 import { Garage } from '../models/garage.model.js';
-
+//import { createToken } from '../services/auth.js';
 import bcrypt from 'bcryptjs';
 
-
+//export const Garage = garageCreator();
 
 export const getAllGarages = async (req, res, next) => {
   try {
@@ -40,8 +40,9 @@ export const updateGarage = async (req, res, next) => {
   try {
     const resp = await Garage.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
-    })
-    
+    }).populate('services', {
+      services: 0,
+    });
     res.json(resp);
   } catch (err) {
     next(err);
