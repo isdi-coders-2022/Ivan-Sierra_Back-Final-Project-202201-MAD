@@ -7,7 +7,7 @@ export function garageCreator(modelName = 'Garage') {
         garage_name: { type: String, required: true },
         cif_nif: { type: String, required: true },
         email: { type: String, required: true },
-        phone: { type: Number, required: true },
+        phone: { type: String, required: true },
         web: { type: String, required: true },
         address: { type: String, required: true },
         services: {
